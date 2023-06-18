@@ -1,4 +1,3 @@
-import getWeatherData from "./getData";
+import test from "./dom";
 
-
-getWeatherData('london');
+test('london');
