@@ -1,17 +1,5 @@
 const key = "59245b1c1f1e4fff937211922231206"
 
-// async function processData(data) {
-//   const currentForecast = await data;
-//   const cityName = currentForecast.location.name;
-//   const weatherText = currentForecast.current.condition.text;
-//   // more things that I want to display
-//   const weatherObject = { 
-//     cityName,
-//     weatherText
-//   };
-//   return weatherObject;
-// }
-
 
 async function getWeatherData(location) {
   const cityName = location.toLowerCase();
@@ -19,8 +7,17 @@ async function getWeatherData(location) {
   const weatherData = await response.json();
   const weatherObject = {
     city: weatherData.location.name,
-    status: weatherData.current.condition.text
+    status: weatherData.current.condition.text,
+    celsius: weatherData.current.temp_c,
+    fahr: weatherData.current.temp_f,
+    uv: weatherData.current.uv,
+    localTime: weatherData.location.localtime,
+    precipMm: weatherData.current.precip_mm,
+    precipIn: weatherData.current.precip_in,
+    windKph: weatherData.current.wind_kph,
+    windMph: weatherData.current.wind_mph
   }
+  console.log(weatherData);
   return weatherObject;
 }
 

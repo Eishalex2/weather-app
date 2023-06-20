@@ -3,7 +3,7 @@ import getWeatherData from "./api";
 function printInformation(weatherObject) {
   console.log(weatherObject.city);
   console.log(weatherObject.status);
-  // console.log(weatherObject.weatherText);
+  console.log(weatherObject);
 }
 
 async function test(location) {
