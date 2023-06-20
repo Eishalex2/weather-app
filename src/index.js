@@ -1,3 +1,3 @@
-import test from "./dom";
+import output from "./dom";
 
-test('london');
+output();
