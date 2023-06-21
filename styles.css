@@ -4,14 +4,99 @@
   box-sizing: border-box;
 }
 
-#info {
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 60%;
+  row-gap: 15%;
+  grid-template-areas: 
+    ". main ."
+    "extra . imperial";
+}
+
+#main-info {
   background-color: pink;
+
+  grid-area: main;
+}
+
+#main-info,
+#extra,
+#imperial {
   width: 230px;
   height: 230px;
   padding: 20px;
   border-radius: 20px;
-  margin: 5% auto;
-  display: grid;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+#extra {
+  background-color: rgba(226,136,247,0.8);
+  font-size: 1.2rem;
+  grid-area: extra;
+}
+
+#imperial {
+  background-color: #f2992c;
+  font-size: 1.2rem;
+  grid-area: imperial;
+}
+
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+form {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 30px 10px 0;
+}
+
+#search {
+  line-height: 2rem;
+  width: 250px;
+  padding: 3px 3px 3px 8px;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+#search:focus-visible {
+  outline: none;
+}
+
+footer {
+  position: absolute;
+  background-color: black;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  bottom: 0;
+}
+
+footer a {
+  color: peachpuff;
+}
+
+.search-icon {
+  color: white;
 }
