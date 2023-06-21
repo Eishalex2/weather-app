@@ -18,6 +18,7 @@ async function getWeatherData(location) {
       windKph: weatherData.current.wind_kph,
       windMph: weatherData.current.wind_mph
     }
+    console.log(weatherData);
     return weatherObject;
   } catch (error) {
     console.log(error);
